@@ -12,7 +12,7 @@
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pahana_edu", "root", "");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pahana_edu1", "root", "");
 
         // Categories
         stmt = conn.prepareStatement("SELECT DISTINCT category FROM items ORDER BY category");
