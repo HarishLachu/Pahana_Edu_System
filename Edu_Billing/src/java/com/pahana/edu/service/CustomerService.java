@@ -1,9 +1,11 @@
 package com.pahana.edu.service;
+
 import com.pahana.edu.dao.CustomerDAO;
 import com.pahana.edu.model.Customer;
 import java.util.List;
 
 public class CustomerService {
+
     private CustomerDAO customerDAO = new CustomerDAO();
 
     public boolean addCustomer(Customer customer) {

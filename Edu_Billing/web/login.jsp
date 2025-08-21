@@ -128,18 +128,18 @@
                 <h2>Sign In</h2>
 
                 <!-- Success/Error messages -->
-        <%
-            String msg = request.getParameter("success");
-            if ("0".equals(msg)) {
-        %>
-            <div class="message error" id="autoDisappear">Invalid username or password!</div>
-        <%
-            } else if ("1".equals(msg)) {
-        %>
-            <div class="message success" id="autoDisappear">Login successful!</div>
-        <%
-            }
-        %>
+                <%
+                    String msg = request.getParameter("success");
+                    if ("0".equals(msg)) {
+                %>
+                <div class="message error" id="autoDisappear">Invalid username or password!</div>
+                <%
+                } else if ("1".equals(msg)) {
+                %>
+                <div class="message success" id="autoDisappear">Login successful!</div>
+                <%
+                    }
+                %>
 
                 <form method="post" action="LoginServlet">
                     <label>Email</label>

@@ -6,10 +6,11 @@ import java.sql.*;
 import java.util.*;
 
 public class CustomerDAO {
-	public boolean addCustomer(Customer customer) {
+
+    public boolean addCustomer(Customer customer) {
         String sql = "INSERT INTO customers(name, email, phone,address) VALUES (?, ?, ?, ?)";
         try (Connection con = ConnectionFactory.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, customer.getName());
             ps.setString(2, customer.getEmail());
             ps.setString(3, customer.getPhone());
@@ -24,13 +25,13 @@ public class CustomerDAO {
     public boolean updateCustomer(Customer customer) {
         String sql = "UPDATE customers SET name=?, email=?, phone=?, address=? WHERE id=?";
         try (Connection con = ConnectionFactory.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, customer.getName());
             ps.setString(2, customer.getEmail());
             ps.setString(3, customer.getPhone());
             ps.setString(4, customer.getAddress());
             ps.setInt(5, customer.getId());
-            
+
             return ps.executeUpdate() > 0;
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,7 +42,7 @@ public class CustomerDAO {
     public boolean deleteCustomer(int id) {
         String sql = "DELETE FROM customers WHERE id=?";
         try (Connection con = ConnectionFactory.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, id);
             return ps.executeUpdate() > 0;
         } catch (Exception e) {
@@ -54,8 +55,8 @@ public class CustomerDAO {
         List<Customer> list = new ArrayList<>();
         String sql = "SELECT * FROM customers";
         try (Connection con = ConnectionFactory.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
+                PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Customer c = new Customer(
                         rs.getInt("id"),
