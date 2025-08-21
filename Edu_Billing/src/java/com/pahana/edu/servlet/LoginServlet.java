@@ -15,11 +15,11 @@ import com.pahana.edu.dao.UserDAO;
 public class LoginServlet extends HttpServlet {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest req, HttpServletResponse res)
+    protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
         String username = req.getParameter("username");
@@ -37,4 +37,3 @@ public class LoginServlet extends HttpServlet {
         }
     }
 }
-
